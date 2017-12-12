@@ -6,7 +6,7 @@
 	<groupId>me.jaegyu</groupId>
 	<artifactId>my-slipp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>my-slipp</name>
 	<description>my-slipp</description>
@@ -49,6 +49,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
 		<dependency>
