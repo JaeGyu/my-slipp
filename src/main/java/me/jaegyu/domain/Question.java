@@ -1,8 +1,11 @@
 package me.jaegyu.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Question {
@@ -10,8 +13,12 @@ public class Question {
 	@Id
 	@GeneratedValue
 	private Long id;
+	
+	@ManyToOne
+	@JoinColumn(foreignKey = @ForeignKey(name="fk_question_writer"))
+	private User writer;
 
-	private String writer;
+//	private String writer;
 
 	private String title;
 
@@ -20,7 +27,7 @@ public class Question {
 	public Question() {
 	}
 
-	public Question(String writer, String title, String contents) {
+	public Question(User writer, String title, String contents) {
 		super();
 		this.writer = writer;
 		this.title = title;
