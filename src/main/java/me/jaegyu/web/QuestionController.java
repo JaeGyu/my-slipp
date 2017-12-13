@@ -34,7 +34,7 @@ public class QuestionController {
 		}
 		
 		User sessionedUser = HttpSessionUtils.getUserFromSession(session);
-		Question question = new Question(sessionedUser.getUserId(), title, contents);
+		Question question = new Question(sessionedUser, title, contents);
 		
 		repository.save(question);
 		
