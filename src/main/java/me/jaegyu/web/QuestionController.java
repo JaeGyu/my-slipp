@@ -48,5 +48,11 @@ public class QuestionController {
 		model.addAttribute("question", repository.findOne(id));
 		return "/qna/show";
 	}
+	
+	@GetMapping("/{id}/form")
+	public String updateForm(@PathVariable Long id, Model model){
+		model.addAttribute("question", repository.findOne(id));
+		return "/qna/updateForm";
+	}
 
 }
