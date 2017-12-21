@@ -62,7 +62,7 @@ public class Question {
 		this.contents = contents;
 	}
 
-	public boolean sameWriter(User loginUser) {
+	public boolean isSameWriter(User loginUser) {
 		return this.writer.equals(loginUser);
 	}
 
