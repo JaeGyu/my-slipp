@@ -5,17 +5,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 public class User {
 
 	@Id
 	@GeneratedValue
+	@JsonProperty  //getter이 없어도 jsonson에서 자동으로 json으로 변환하는데 참여 시킨다.
 	private Long id;
 
 	@Column(nullable = false, length = 20, unique = true)
+	@JsonProperty
 	private String userId;
+	
+	@JsonIgnore
 	private String password;
+	
+	@JsonProperty
 	private String name;
+	
+	@JsonProperty
 	private String email;
 
 	public boolean matchId(Long newId) {
@@ -38,33 +49,33 @@ public class User {
 		return this.id;
 	}
 
-	public String getUserId() {
-		return userId;
-	}
+//	public String getUserId() {
+//		return userId;
+//	}
 
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
-	public String getPassword() {
-		return password;
-	}
+//	public String getPassword() {
+//		return password;
+//	}
 
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	public String getName() {
-		return name;
-	}
+//	public String getName() {
+//		return name;
+//	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
-	}
+//	public String getEmail() {
+//		return email;
+//	}
 
 	public void setEmail(String email) {
 		this.email = email;
